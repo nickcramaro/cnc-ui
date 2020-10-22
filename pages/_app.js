@@ -3,6 +3,7 @@ import App from "next/app";
 import Head from "next/head";
 import Layout from "../components/layout";
 import AppContext from "../context/app-context";
+import withApollo from "../lib/apollo";
 
 class CNCApp extends App {
   state = {
@@ -13,7 +14,10 @@ class CNCApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <AppContext.Provider>
+      <AppContext.Provider
+        value={{
+          user: this.state.user,
+        }}>
         <Head>
           <link
             rel="stylesheet"
@@ -31,4 +35,4 @@ class CNCApp extends App {
   }
 }
 
-export default CNCApp;
+export default withApollo({ ssr: true })(CNCApp);
