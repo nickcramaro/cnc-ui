@@ -2,10 +2,12 @@ import React from "react";
 import Cookie from "js-cookie";
 import fetch from "isomorphic-fetch";
 import App from "next/app";
-import Head from "next/head";
+
 import Layout from "../components/layout";
 import AppContext from "../context/app-context";
 import withApollo from "../lib/apollo";
+
+import 'bootstrap/dist/css/bootstrap.css'
 
 class CNCApp extends App {
   state = {
@@ -49,15 +51,6 @@ class CNCApp extends App {
           isAuthenticated: !!this.state.user,
           setUser: this.setUser,
         }}>
-        <Head>
-          <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossOrigin="anonymous"
-          />
-        </Head>
-
         <Layout>
           <Component {...pageProps} />
         </Layout>
