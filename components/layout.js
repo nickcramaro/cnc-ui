@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { Container, Nav, NavItem } from "reactstrap";
+import AppContext from "../context/app-context";
+import { logout } from "../lib/auth";
 
 const Layout = (props) => {
   const title = "Carbon Neutral Club";
+  const { user, setUser } = useContext(AppContext);
 
   return (
     <div>
@@ -20,17 +23,40 @@ const Layout = (props) => {
         />
       </Head>
       <header>
-        <Nav className="navbar navbar-dark bg-dark">
+      <Nav className="navbar navbar-dark bg-dark">
           <NavItem>
             <Link href="/">
               <a className="navbar-brand">Home</a>
             </Link>
-            <Link href="/login">
-              <a className="navbar-brand">Login</a>
-            </Link>
-            <Link href="/register">
-              <a className="navbar-brand">Register</a>
-            </Link>
+          </NavItem>
+
+          <NavItem className="ml-auto">
+            {user ? (
+              <h5>{user.username}</h5>
+            ) : (
+              <Link href="/register">
+                <a className="nav-link"> Sign up</a>
+              </Link>
+            )}
+          </NavItem>
+          <NavItem>
+            {user ? (
+              <Link href="/">
+                <a
+                  className="nav-link"
+                  onClick={() => {
+                    logout();
+                    setUser(null);
+                  }}
+                >
+                  Logout
+                </a>
+              </Link>
+            ) : (
+              <Link href="/login">
+                <a className="nav-link">Sign in</a>
+              </Link>
+            )}
           </NavItem>
         </Nav>
       </header>
