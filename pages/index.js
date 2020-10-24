@@ -1,6 +1,6 @@
-import React from "react";
-import { gql, useQuery } from "@apollo/client";
-import { Col, Row } from "reactstrap";
+import React from 'react';
+import { gql, useQuery } from '@apollo/client';
+import { Col, Row } from 'reactstrap';
 
 const QUERY = gql`
   {
@@ -15,21 +15,21 @@ const QUERY = gql`
 `;
 
 function Home() {
-  const { loading, error, data } = useQuery(QUERY);
-  if (error) return "Error fetching content";
-  if (loading) return <h1>Fetching</h1>;
-  if (data.homeContent) {
-    console.log(data.homeContent);
-    return (
-      <div className="container-fluid">
-        <Row>
-          <Col>
-            {data.homeContent.copy[0].en}
-          </Col>
-        </Row>
-      </div>
-    );
-  }
+	const { loading, error, data } = useQuery(QUERY);
+	if (error) return 'Error fetching content';
+	if (loading) return <h1>Fetching</h1>;
+	if (data.homeContent) {
+		console.log(data.homeContent);
+		return (
+			<div className="container-fluid">
+				<Row>
+					<Col>
+						{data.homeContent.copy[0].en}
+					</Col>
+				</Row>
+			</div>
+		);
+	}
 }
 
 export default Home;
