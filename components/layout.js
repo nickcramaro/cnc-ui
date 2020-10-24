@@ -21,7 +21,9 @@ const Layout = (props) => {
           <Nav className="cnc-nav navbar">
             <NavItem>
               <Link href="/">
-                <a className="navbar-brand">Home</a>
+                <a className="navbar-brand">
+                  <img src="/logo.svg" />
+                </a>
               </Link>
             </NavItem>
 
