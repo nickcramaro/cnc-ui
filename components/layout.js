@@ -16,45 +16,47 @@ const Layout = (props) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <header>
-      <Nav className="navbar navbar-dark bg-dark">
-          <NavItem>
-            <Link href="/">
-              <a className="navbar-brand">Home</a>
-            </Link>
-          </NavItem>
-
-          <NavItem className="ml-auto">
-            {user ? (
-              <h5>{user.username}</h5>
-            ) : (
-              <Link href="/register">
-                <a className="nav-link"> Sign up</a>
-              </Link>
-            )}
-          </NavItem>
-          <NavItem>
-            {user ? (
+      <Container className="cnc-container">
+        <header>
+          <Nav className="cnc-nav navbar">
+            <NavItem>
               <Link href="/">
-                <a
-                  className="nav-link"
-                  onClick={() => {
-                    logout();
-                    setUser(null);
-                  }}
-                >
-                  Logout
+                <a className="navbar-brand">Home</a>
+              </Link>
+            </NavItem>
+
+            <NavItem className="ml-auto">
+              {user ? (
+                <h5>{user.username}</h5>
+              ) : (
+                  <Link href="/register">
+                    <a className="nav-link"> Sign up</a>
+                  </Link>
+                )}
+            </NavItem>
+            <NavItem>
+              {user ? (
+                <Link href="/">
+                  <a
+                    className="nav-link"
+                    onClick={() => {
+                      logout();
+                      setUser(null);
+                    }}
+                  >
+                    Logout
                 </a>
-              </Link>
-            ) : (
-              <Link href="/login">
-                <a className="nav-link">Sign in</a>
-              </Link>
-            )}
-          </NavItem>
-        </Nav>
-      </header>
-      <Container>{props.children}</Container>
+                </Link>
+              ) : (
+                  <Link href="/login">
+                    <a className="nav-link">Sign in</a>
+                  </Link>
+                )}
+            </NavItem>
+          </Nav>
+        </header>
+        {props.children}
+      </Container>
     </div>
   );
 };

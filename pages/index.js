@@ -14,7 +14,6 @@ const QUERY = gql`
   }
 `;
 
-
 function Home() {
   const { loading, error, data } = useQuery(QUERY);
   if (error) return "Error fetching content";

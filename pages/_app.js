@@ -7,6 +7,7 @@ import Layout from "../components/layout";
 import AppContext from "../context/app-context";
 import withApollo from "../lib/apollo";
 
+import '../styles/global.scss';
 import 'bootstrap/dist/css/bootstrap.css'
 
 class CNCApp extends App {

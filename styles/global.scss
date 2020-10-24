@@ -1,0 +1,54 @@
+@use 'normalize';
+
+/*
+ * Global Variables
+ */
+
+$dark-blue: #1d60d8;
+$middle-blue: #2771ef;
+$blue: #318af4;
+$yellow-orange: #f6b940;
+$yellow: #f8ce46;
+$purple-1: #162160;
+$purple-2: #223082;
+$pink: #ff99cc;
+$pink-hover: #f978c2;
+$beige: #faf4ed;
+$white: #ffffff;
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 100%;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 68px;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 44px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.cnc-nav {
+    background-color: $beige;
+}
+
+.cnc-container {
+    background-color: $beige;
+}
