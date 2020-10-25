@@ -11,7 +11,7 @@ import {
 	Input,
 } from 'reactstrap';
 import { registerUser } from '../lib/auth';
-import AppContext from '../context/app-context';
+import AppContext from '../context/AppContext';
 
 const Register = () => {
 	const [data, setData] = useState({ email: '', username: '', password: '' });

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Container, Nav, NavItem } from 'reactstrap';
-import AppContext from '../context/app-context';
+import AppContext from '../context/AppContext';
 import { logout } from '../lib/auth';
 import PropTypes from 'prop-types';
 

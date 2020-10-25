@@ -3,8 +3,8 @@ import Cookie from 'js-cookie';
 import fetch from 'isomorphic-fetch';
 import App from 'next/app';
 
-import Layout from '../components/layout';
-import AppContext from '../context/app-context';
+import Layout from '../components/Layout';
+import AppContext from '../context/AppContext';
 import withApollo from '../lib/apollo';
 
 import '../styles/global.scss';
