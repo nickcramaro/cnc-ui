@@ -33,7 +33,7 @@ const Layout = (props) => {
 								<h5>{user.username}</h5>
 							) : (
 								<Link href="/register">
-									<a className="nav-link"> Sign up</a>
+									<a className="nav-link">Sign up</a>
 								</Link>
 							)}
 						</NavItem>
