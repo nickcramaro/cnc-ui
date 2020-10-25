@@ -4,7 +4,7 @@ import React from "react";
 
 import { CardElement } from "@stripe/react-stripe-js";
 
-function CardSection(props) {
+const CardSection = (props) => {
   return (
     <div>
       <div>
