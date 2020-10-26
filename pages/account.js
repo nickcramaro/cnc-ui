@@ -15,9 +15,10 @@ import InjectedCheckoutForm from '../components/checkout/CheckoutForm';
 const Account = () => {
 	const router = useRouter();
 	const appContext = useContext(AppContext);
+	const STRIPE_API_KEY = process.env.NEXT_PUBLIC_STRIPE_API_KEY;
 
 	// load stripe to inject into elements components
-	const stripePromise = loadStripe('pk_test_51HdmOhAv04GTIr8UCS9YnaJnxuUMlXMq30JXCbIU0MjvjNmSjXpcbGLi4M7PmYgop7Bo1aPTn3lXvE4YPe8mzBqI00RS5TSOTE');
+	const stripePromise = loadStripe(STRIPE_API_KEY);
 
 	useEffect(() => {
 		console.log(appContext);

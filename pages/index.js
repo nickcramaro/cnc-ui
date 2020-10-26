@@ -19,7 +19,6 @@ const Home = () => {
 	if (error) return 'Error fetching content';
 	if (loading) return <h1>Fetching</h1>;
 	if (data.homeContent) {
-		console.log(data.homeContent);
 		return (
 			<div className="container-fluid">
 				<Row>

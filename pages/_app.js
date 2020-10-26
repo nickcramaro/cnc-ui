@@ -12,13 +12,14 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const App = ({ Component, pageProps }) => {
 	const [user, setUser] = useState(null);
+	const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337';
 
 	useEffect(async () => {
 		const token = Cookie.get('token');
 
 		if (token) {
 			// authenticate the token on the server and place set user object
-			const { data: res } = await to(fetch('http://localhost:1337/users/me', {
+			const { data: res } = await to(fetch(`${API_URL}/users/me`, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},
@@ -37,9 +38,6 @@ const App = ({ Component, pageProps }) => {
 			}
 		}
 	}, []);
-
-	console.log(Component);
-	console.log(pageProps);
 
 	return (
 		<AppContext.Provider

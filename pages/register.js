@@ -1,5 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
+import { useRouter } from 'next/router';
 import {
 	Container,
 	Row,
@@ -17,7 +18,15 @@ const Register = () => {
 	const [data, setData] = useState({ email: '', username: '', password: '' });
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState({});
+	const router = useRouter();
 	const appContext = useContext(AppContext);
+
+	useEffect(() => {
+		if (appContext.isAuthenticated) {
+			router.push('/'); // redirect if you're already logged in
+		}
+	}, []);
+
 	return (
 		<Container>
 			<Row>
