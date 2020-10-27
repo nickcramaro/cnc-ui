@@ -1,6 +1,5 @@
-import React, { useEffect, useContext } from 'react';
+import React from 'react';
 
-import { useRouter } from 'next/router';
 import {
 	Container,
 	Row,
@@ -9,23 +8,14 @@ import {
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
-import AppContext from '../context/AppContext';
+import { requireAuth } from '../lib/auth';
 import InjectedCheckoutForm from '../components/checkout/CheckoutForm';
 
 const Account = () => {
-	const router = useRouter();
-	const appContext = useContext(AppContext);
 	const STRIPE_API_KEY = process.env.NEXT_PUBLIC_STRIPE_API_KEY;
 
 	// load stripe to inject into elements components
 	const stripePromise = loadStripe(STRIPE_API_KEY);
-
-	useEffect(() => {
-		console.log(appContext);
-		if (!appContext.isAuthenticated) {
-			router.push('/'); // redirect away if you are not authenticated
-		}
-	}, []);
 
 	return (
 		<Container>
@@ -42,5 +32,7 @@ const Account = () => {
 		</Container>
 	);
 };
+
+export const getServerSideProps = requireAuth();
 
 export default Account;
