@@ -1,7 +1,5 @@
 import React, { useState, useContext } from 'react';
 
-import { FormGroup, Label, Input } from 'reactstrap';
-
 import fetch from 'isomorphic-fetch';
 import Cookies from 'js-cookie';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
@@ -59,22 +57,22 @@ const CheckoutForm = () => {
 		<div className="paper">
 			<h5>Your information:</h5>
 			<hr />
-			<FormGroup>
+			<div>
 				<div>
-					<Label>Address</Label>
-					<Input name="address" onChange={onChange} />
+					<label htmlFor="address">Address</label>
+					<input name="address" onChange={onChange} />
 				</div>
-			</FormGroup>
-			<FormGroup>
+			</div>
+			<div>
 				<div>
-					<Label>City</Label>
-					<Input name="city" onChange={onChange} />
+					<label htmlFor="city">City</label>
+					<input name="city" onChange={onChange} />
 				</div>
 				<div>
-					<Label>State</Label>
-					<Input name="state" onChange={onChange} />
+					<label htmlFor="state">State</label>
+					<input name="state" onChange={onChange} />
 				</div>
-			</FormGroup>
+			</div>
 
 			<CardSection data={data} stripeError={error} submitOrder={submitOrder} />
 		</div>

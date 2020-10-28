@@ -1,6 +1,5 @@
 import React from 'react';
 import { gql, useQuery } from '@apollo/client';
-import { Col, Row } from 'reactstrap';
 
 const QUERY = gql`
   {
@@ -20,12 +19,8 @@ const Home = () => {
 	if (loading) return <h1>Fetching</h1>;
 	if (data.homeContent) {
 		return (
-			<div className="container-fluid">
-				<Row>
-					<Col>
-						{data.homeContent.copy[0].en}
-					</Col>
-				</Row>
+			<div>
+				{data.homeContent.copy[0].en}
 			</div>
 		);
 	}

@@ -8,7 +8,6 @@ import withApollo from '../lib/apollo';
 import { to } from '../lib/utils';
 
 import '../styles/global.scss';
-import 'bootstrap/dist/css/bootstrap.css';
 
 const App = ({ Component, pageProps }) => {
 	const [user, setUser] = useState(null);

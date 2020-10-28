@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Container, Nav, NavItem } from 'reactstrap';
 import AppContext from '../context/AppContext';
 import { logout } from '../lib/auth';
 import PropTypes from 'prop-types';
@@ -17,38 +16,37 @@ const Layout = (props) => {
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
-			<Container className="cnc-container">
+			<div className="cnc-container">
 				<header>
-					<Nav className="cnc-nav navbar">
-						<NavItem>
+					<nav className="cnc-nav">
+						<div>
 							<Link href="/">
-								<a className="navbar-brand">
+								<a>
 									<img src="/logo.svg" />
 								</a>
 							</Link>
-						</NavItem>
+						</div>
 
-						<NavItem className="ml-auto">
+						<div>
 							{user ? (
 								<h5>{user.username}</h5>
 							) : (
 								<Link href="/register">
-									<a className="nav-link">Sign up</a>
+									<a>Sign up</a>
 								</Link>
 							)}
-						</NavItem>
+						</div>
 						{user && (
-							<NavItem>
+							<div>
 								<Link href="/account">
-									<a className="nav-link">Account</a>
+									<a>Account</a>
 								</Link>
-							</NavItem>
+							</div>
 						)}
-						<NavItem>
+						<div>
 							{user ? (
 								<Link href="/">
 									<a
-										className="nav-link"
 										onClick={() => {
 											logout();
 											setUser(null);
@@ -59,14 +57,14 @@ const Layout = (props) => {
 								</Link>
 							) : (
 								<Link href="/login">
-									<a className="nav-link">Sign in</a>
+									<a>Sign in</a>
 								</Link>
 							)}
-						</NavItem>
-					</Nav>
+						</div>
+					</nav>
 				</header>
 				{props.children}
-			</Container>
+			</div>
 		</div>
 	);
 };
