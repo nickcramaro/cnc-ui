@@ -54,9 +54,8 @@ const CheckoutForm = () => {
 	}
 
 	return (
-		<div className="paper">
-			<h5>Your information:</h5>
-			<hr />
+		<div>
+			<h4>Your information</h4>
 			<div>
 				<div>
 					<label htmlFor="address">Address</label>

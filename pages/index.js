@@ -19,8 +19,8 @@ const Home = () => {
 	if (loading) return <h1>Fetching</h1>;
 	if (data.homeContent) {
 		return (
-			<div>
-				{data.homeContent.copy[0].en}
+			<div className="container__section container__section--blue">
+				<h1>{data.homeContent.copy[0].en}</h1>
 			</div>
 		);
 	}

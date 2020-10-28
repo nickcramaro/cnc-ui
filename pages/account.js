@@ -1,10 +1,5 @@
 import React from 'react';
 
-import {
-	Container,
-	Row,
-	Col,
-} from 'reactstrap';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
@@ -18,18 +13,16 @@ const Account = () => {
 	const stripePromise = loadStripe(STRIPE_API_KEY);
 
 	return (
-		<Container>
-			<Row>
-				<Col>
-					<h1>Account Settings</h1>
-				</Col>
-				<Col>
-					<Elements stripe={stripePromise}>
-						<InjectedCheckoutForm />
-					</Elements>
-				</Col>
-			</Row>
-		</Container>
+		<div>
+			<div className="container__section container__section--blue">
+				<h1>Account Settings</h1>
+			</div>
+			<div className="container__section">
+				<Elements stripe={stripePromise}>
+					<InjectedCheckoutForm />
+				</Elements>
+			</div>
+		</div>
 	);
 };
 
