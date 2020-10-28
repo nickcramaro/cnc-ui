@@ -20,7 +20,7 @@ const CardSection = (props) => {
 								/>
 							</div>
 							<br />
-							<div className="order-button-wrapper">
+							<div>
 								<button onClick={props.submitOrder}>Confirm order</button>
 							</div>
 							{props.stripeError ? (
@@ -31,16 +31,6 @@ const CardSection = (props) => {
 					</fieldset>
 				</div>
 			</div>
-			<style jsx>
-				{`
-          .order-button-wrapper {
-            display: flex;
-            width: 100%;
-            align-items: flex-end;
-            justify-content: flex-end;
-          }
-        `}
-			</style>
 		</div>
 	);
 };

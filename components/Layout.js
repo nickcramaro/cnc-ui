@@ -37,6 +37,13 @@ const Layout = (props) => {
 								</Link>
 							)}
 						</NavItem>
+						{user && (
+							<NavItem>
+								<Link href="/account">
+									<a className="nav-link">Account</a>
+								</Link>
+							</NavItem>
+						)}
 						<NavItem>
 							{user ? (
 								<Link href="/">

@@ -20,10 +20,10 @@ const Account = () => {
 	return (
 		<Container>
 			<Row>
-				<Col style={{ paddingRight: 0 }} sm={{ size: 3, order: 1, offset: 2 }}>
-					<h1 style={{ margin: 20 }}>Account Settings</h1>
+				<Col>
+					<h1>Account Settings</h1>
 				</Col>
-				<Col style={{ paddingLeft: 5 }} sm={{ size: 6, order: 2 }}>
+				<Col>
 					<Elements stripe={stripePromise}>
 						<InjectedCheckoutForm />
 					</Elements>
