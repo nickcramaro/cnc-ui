@@ -1,7 +1,7 @@
 import React from 'react';
 import { gql, useQuery } from '@apollo/client';
 
-const QUERY = gql`
+const HOMEPAGE_CONTENT = gql`
   {
     homeContent {
       copy {
@@ -14,7 +14,7 @@ const QUERY = gql`
 `;
 
 const Home = () => {
-	const { loading, error, data } = useQuery(QUERY);
+	const { loading, error, data } = useQuery(HOMEPAGE_CONTENT);
 	if (error) return 'Error fetching content';
 	if (loading) return <h1>Fetching</h1>;
 	if (data.homeContent) {
